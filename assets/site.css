@@ -1,0 +1,118 @@
+/* RJY Studios website. Layout: quiet one-column studio site, label-left / text-right sections on wide screens. */
+:root {
+  --bg: #f6f7f5;
+  --fg: #16201c;
+  --muted: #5a6560;
+  --line: #dce1dd;
+  --accent: #2e6a4e;
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111614;
+    --fg: #e7ece9;
+    --muted: #9aa59f;
+    --line: #29312d;
+    --accent: #7cc3a0;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Header */
+header.site { border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: var(--fg); color: var(--bg);
+  display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: 0.04em;
+}
+.wordmark { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+
+main { flex: 1; }
+
+/* Home: hero */
+.hero .wrap { padding-block: clamp(72px, 12vw, 148px) clamp(56px, 9vw, 112px); }
+.hero h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(44px, 8vw, 88px); line-height: 1.02; letter-spacing: -0.035em;
+  margin: 0; max-width: 12ch; text-wrap: balance;
+}
+.hero p { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); margin: 24px 0 0; max-width: 34ch; }
+.platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0 0; padding: 0; list-style: none; }
+.platforms li {
+  font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+}
+
+/* Home: sections */
+.section { border-top: 1px solid var(--line); }
+.section .wrap { padding-block: clamp(48px, 7vw, 88px); display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 760px) { .section .wrap { grid-template-columns: 220px minmax(0, 1fr); gap: 48px; } }
+.label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 6px 0 0; }
+.section .body { min-width: 0; max-width: 62ch; }
+.section p { margin: 0 0 16px; }
+.section .body > :last-child { margin-bottom: 0; }
+.lead {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(22px, 2.8vw, 28px); line-height: 1.35; letter-spacing: -0.01em;
+  margin: 0 0 20px; text-wrap: pretty;
+}
+.muted { color: var(--muted); }
+
+.email {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(22px, 3.4vw, 32px); letter-spacing: -0.015em;
+  color: var(--accent); text-decoration: none; overflow-wrap: anywhere;
+}
+.email:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Privacy Policy page */
+.doc .wrap { padding-block: clamp(56px, 8vw, 96px); }
+.doc article { max-width: 66ch; }
+.doc h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(36px, 5.5vw, 56px); letter-spacing: -0.03em; line-height: 1.05;
+  margin: 0 0 12px;
+}
+.doc .date { color: var(--muted); font-size: 14px; margin: 0 0 40px; }
+.doc h2 { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; margin: 40px 0 8px; }
+.doc p { margin: 0 0 14px; }
+.doc ul { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; }
+.doc a { color: var(--accent); }
+
+/* Footer */
+footer.site { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer.site .wrap {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px;
+  padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px));
+}
+footer.site nav { display: flex; gap: 20px; flex-wrap: wrap; }
+footer.site a { text-decoration: none; }
+footer.site a:hover { color: var(--fg); text-decoration: underline; }
