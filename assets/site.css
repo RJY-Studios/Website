@@ -75,7 +75,7 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 
 /* Home: hero */
 .hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(40px, 8vw, 96px) clamp(40px, 7vw, 88px); }
-@media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+@media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr); } }
 .hero h1 {
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
   letter-spacing: -0.02em; margin: 0; text-wrap: balance;
@@ -91,8 +91,8 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 .chips li:nth-child(3) { background: var(--lilac); }
 
 /* Hero illustration: an iPad with an iPhone and an Android phone in front (inline SVG in index.html). */
-.devart { width: 100%; max-width: 400px; height: auto; justify-self: center; }
-@media (max-width: 819px) { .devart { max-width: 320px; } }
+.devart { width: 100%; max-width: 440px; height: auto; justify-self: center; }
+@media (max-width: 819px) { .devart { max-width: 352px; } }
 .devart .d-body { fill: #1d1d1f; }
 .devart .d-screen { fill: #ffffff; }
 .devart .d-ui { fill: rgba(0, 0, 0, 0.12); }
