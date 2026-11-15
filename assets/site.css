@@ -89,18 +89,10 @@ main { flex: 1; }
 
 /* Home: cards */
 .cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(56px, 8vw, 96px); }
-@media (min-width: 820px) { .cards .in { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
 .card { border-radius: 24px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
 .card.what { background: var(--mint); }
-.card.hello { background: var(--lilac); }
 .card h2 { font: 400 clamp(24px, 2.8vw, 32px)/1.2 var(--serif); letter-spacing: -0.01em; margin: 0; }
 .card p { margin: 14px 0 0; color: var(--mu); max-width: 60ch; }
-.btn {
-  display: inline-flex; align-items: center; min-height: 48px; margin-top: 22px; padding: 0 22px;
-  border-radius: 999px; background: var(--ink); color: #fff;
-  font-weight: 700; text-decoration: none; overflow-wrap: anywhere;
-}
-.btn:hover { background: #222; }
 
 /* Privacy Policy and other text pages */
 .doc .in { padding-block: clamp(40px, 7vw, 88px); }
@@ -118,5 +110,6 @@ footer.site .in {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px;
   padding-block: 24px calc(24px + env(safe-area-inset-bottom, 0px));
 }
+footer.site nav { display: flex; flex-wrap: wrap; gap: 4px 24px; }
 footer.site a { text-decoration: none; font-weight: 600; }
 footer.site a:hover { color: var(--ink); text-decoration: underline; }
