@@ -5,6 +5,7 @@
   --ink: #000000;
   --mu: rgba(0, 0, 0, 0.62);
   --ln: rgba(0, 0, 0, 0.12);
+  --gr: rgba(0, 0, 0, 0.07); /* Nooch's light grey */
   --on-pastel: #000000;
   --on-pastel-mu: rgba(0, 0, 0, 0.62);
   /* Nooch's recipe category pastels */
@@ -22,9 +23,9 @@
 }
 /* Dark mode (Nooch's dark colours). The data-theme lines also let a viewer with its own light/dark switch override the device. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); color-scheme: dark; }
+  :root:not([data-theme="light"]) { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); --gr: rgba(255, 255, 255, 0.14); color-scheme: dark; }
 }
-:root[data-theme="dark"] { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); color-scheme: dark; }
+:root[data-theme="dark"] { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); --gr: rgba(255, 255, 255, 0.14); color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -56,7 +57,7 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .mark {
   width: 36px; height: 36px; border-radius: 11px; flex: none;
-  background: var(--butter); color: var(--on-pastel);
+  background: var(--sky); color: var(--on-pastel);
   display: grid; place-items: center;
   font: 700 11px var(--sans); letter-spacing: 0.06em;
 }
@@ -103,10 +104,10 @@ main { flex: 1; }
 
 /* Home: cards */
 .cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(56px, 8vw, 96px); }
-.card { color: var(--on-pastel); border-radius: 12px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
-.card.what { background: var(--mint); }
+.card { color: var(--ink); border-radius: 12px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
+.card.what { background: var(--gr); }
 .card h2 { font: 400 clamp(24px, 2.8vw, 32px)/1.2 var(--serif); letter-spacing: -0.01em; margin: 0; }
-.card p { margin: 14px 0 0; color: var(--on-pastel-mu); max-width: 60ch; }
+.card p { margin: 14px 0 0; color: var(--mu); max-width: 60ch; }
 
 /* Privacy Policy and other text pages */
 .doc .in { padding-block: clamp(40px, 7vw, 88px); }
