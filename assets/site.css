@@ -58,7 +58,7 @@ main { flex: 1; }
 
 /* Home: hero */
 .hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(40px, 8vw, 96px) clamp(40px, 7vw, 88px); }
-@media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); } }
+@media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
 .hero h1 {
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
   letter-spacing: -0.02em; margin: 0; text-wrap: balance;
