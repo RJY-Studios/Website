@@ -90,13 +90,21 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 .chips li:nth-child(2) { background: var(--mint); }
 .chips li:nth-child(3) { background: var(--lilac); }
 
-.shapes { position: relative; width: 100%; max-width: 360px; height: 260px; justify-self: center; }
-@media (max-width: 819px) { .shapes { height: 190px; max-width: 260px; } }
-.shapes span { position: absolute; display: block; }
-.shapes span:nth-child(1) { width: 62%; aspect-ratio: 1; border-radius: 34%; background: var(--butter); left: 0; top: 8%; transform: rotate(-8deg); }
-.shapes span:nth-child(2) { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--mint); right: 4%; top: 0; }
-.shapes span:nth-child(3) { width: 44%; aspect-ratio: 1; border-radius: 30%; background: var(--blush); right: 10%; bottom: 0; transform: rotate(10deg); }
-.shapes span:nth-child(4) { width: 18%; aspect-ratio: 1; border-radius: 50%; background: var(--sky); left: 30%; bottom: 10%; }
+/* Hero illustration: an iPad with an iPhone and an Android phone in front (inline SVG in index.html). */
+.devart { width: 100%; max-width: 400px; height: auto; justify-self: center; }
+@media (max-width: 819px) { .devart { max-width: 320px; } }
+.devart .d-body { fill: #1d1d1f; }
+.devart .d-screen { fill: #ffffff; }
+.devart .d-ui { fill: rgba(0, 0, 0, 0.12); }
+.devart .d-cam { fill: #000000; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .devart .d-body { fill: #3a3a3c; }
+  :root:not([data-theme="light"]) .devart .d-screen { fill: #161616; }
+  :root:not([data-theme="light"]) .devart .d-ui { fill: rgba(255, 255, 255, 0.16); }
+}
+:root[data-theme="dark"] .devart .d-body { fill: #3a3a3c; }
+:root[data-theme="dark"] .devart .d-screen { fill: #161616; }
+:root[data-theme="dark"] .devart .d-ui { fill: rgba(255, 255, 255, 0.16); }
 
 /* Home: cards */
 .cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(32px, 4vw, 48px); }
