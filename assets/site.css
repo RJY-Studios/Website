@@ -1,9 +1,12 @@
-/* RJY Studios website. Look: Nooch's pastels on white, Source Serif 4 headings, Manrope text, soft rounded shapes. Light only, like Nooch's default. */
+/* RJY Studios website. Look: Nooch's pastels on white (or black in dark mode), Source Serif 4 headings, Manrope text, soft rounded shapes.
+   Dark mode follows the device setting, with Nooch's dark colours; pastel surfaces keep black text in both modes, as in Nooch. */
 :root {
   --bg: #ffffff;
   --ink: #000000;
   --mu: rgba(0, 0, 0, 0.62);
   --ln: rgba(0, 0, 0, 0.12);
+  --on-pastel: #000000;
+  --on-pastel-mu: rgba(0, 0, 0, 0.62);
   /* Nooch's recipe category pastels */
   --sky: #D8E6EC;
   --mint: #D9E8DF;
@@ -17,6 +20,11 @@
   --sans: "Manrope", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
   color-scheme: light;
 }
+/* Dark mode (Nooch's dark colours). The data-theme lines also let a viewer with its own light/dark switch override the device. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #000000; --ink: #ffffff; --mu: rgba(255, 255, 255, 0.64); --ln: rgba(255, 255, 255, 0.16); color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -48,7 +56,7 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .mark {
   width: 36px; height: 36px; border-radius: 11px; flex: none;
-  background: var(--butter); color: var(--ink);
+  background: var(--butter); color: var(--on-pastel);
   display: grid; place-items: center;
   font: 700 11px var(--sans); letter-spacing: 0.06em;
 }
@@ -67,7 +75,7 @@ main { flex: 1; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 28px 0 0; padding: 0; }
 .chips li {
   font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  border-radius: 999px; padding: 7px 14px; color: var(--ink);
+  border-radius: 999px; padding: 7px 14px; color: var(--on-pastel);
 }
 .chips li:nth-child(1) { background: var(--sky); }
 .chips li:nth-child(2) { background: var(--mint); }
@@ -83,16 +91,16 @@ main { flex: 1; }
 
 /* Home: cards */
 .cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(56px, 8vw, 96px); }
-.card { border-radius: 12px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
+.card { color: var(--on-pastel); border-radius: 12px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
 .card.what { background: var(--mint); }
 .card h2 { font: 400 clamp(24px, 2.8vw, 32px)/1.2 var(--serif); letter-spacing: -0.01em; margin: 0; }
-.card p { margin: 14px 0 0; color: var(--mu); max-width: 60ch; }
+.card p { margin: 14px 0 0; color: var(--on-pastel-mu); max-width: 60ch; }
 
 /* Privacy Policy and other text pages */
 .doc .in { padding-block: clamp(40px, 7vw, 88px); }
 .doc article { max-width: 68ch; }
 .doc h1 { font: 400 clamp(38px, 5.5vw, 56px)/1.08 var(--serif); letter-spacing: -0.02em; margin: 0 0 16px; }
-.doc .date { display: inline-block; background: var(--butter); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; margin: 0 0 36px; }
+.doc .date { display: inline-block; background: var(--butter); color: var(--on-pastel); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; margin: 0 0 36px; }
 .doc h2 { font: 400 24px/1.25 var(--serif); margin: 40px 0 8px; }
 .doc p { margin: 0 0 14px; }
 .doc ul { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; }
