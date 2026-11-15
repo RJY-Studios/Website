@@ -62,6 +62,18 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 }
 .wordmark { font: 400 22px/1 var(--serif); letter-spacing: -0.01em; }
 
+/* Light / dark toggle: sun and moon in one pill; the active one sits on a pastel circle. 44 px tall. */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: 2px; padding: 5px; flex: none;
+  border: 1px solid var(--ln); border-radius: 999px; background: transparent;
+  color: var(--mu); cursor: pointer; font: inherit;
+}
+.theme-toggle:hover { color: var(--ink); }
+.theme-toggle span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; transition: background-color 0.2s, color 0.2s; }
+:root:not([data-theme="dark"]) .tt-sun { background: var(--butter); color: var(--on-pastel); }
+:root[data-theme="dark"] .tt-moon { background: var(--sky); color: var(--on-pastel); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle span { transition: none; } }
+
 main { flex: 1; }
 
 /* Home: hero */
