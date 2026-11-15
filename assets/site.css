@@ -63,7 +63,6 @@ main { flex: 1; }
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
   letter-spacing: -0.02em; margin: 0; text-wrap: balance;
 }
-.hero h1 mark { background: linear-gradient(transparent 60%, var(--butter) 60%); color: inherit; padding: 0 4px; white-space: nowrap; }
 .hero p { font-size: clamp(17px, 2vw, 20px); color: var(--mu); margin: 22px 0 0; max-width: 36ch; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 28px 0 0; padding: 0; }
 .chips li {
