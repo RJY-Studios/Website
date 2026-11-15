@@ -34,9 +34,6 @@ body {
   background: var(--bg);
   color: var(--ink);
   font: 16px/1.6 var(--sans);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
@@ -75,7 +72,6 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 :root[data-theme="dark"] .tt-moon { background: var(--ink); color: var(--bg); }
 @media (prefers-reduced-motion: reduce) { .theme-toggle span { transition: none; } }
 
-main { flex: 1; }
 
 /* Home: hero */
 .hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(40px, 8vw, 96px) clamp(40px, 7vw, 88px); }
@@ -103,7 +99,7 @@ main { flex: 1; }
 .shapes span:nth-child(4) { width: 18%; aspect-ratio: 1; border-radius: 50%; background: var(--sky); left: 30%; bottom: 10%; }
 
 /* Home: cards */
-.cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(56px, 8vw, 96px); }
+.cards .in { display: grid; grid-template-columns: 1fr; gap: 16px; padding-block: 0 clamp(32px, 4vw, 48px); }
 .card { color: var(--ink); border-radius: 12px; padding: clamp(24px, 3.4vw, 40px); min-width: 0; }
 .card.what { background: var(--gr); }
 .card h2 { font: 400 clamp(24px, 2.8vw, 32px)/1.2 var(--serif); letter-spacing: -0.01em; margin: 0; }
