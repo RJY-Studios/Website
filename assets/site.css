@@ -119,7 +119,8 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 .card p { margin: 14px 0 0; color: var(--mu); max-width: 60ch; }
 
 /* Privacy Policy and other text pages */
-.doc .in { padding-block: clamp(40px, 7vw, 88px); }
+.doc .in { padding-block: clamp(20px, 4vw, 48px) clamp(32px, 4vw, 48px); } /* same as the home page: under the header, and above the footer */
+.doc article > :last-child { margin-bottom: 0; }
 .doc article { max-width: 68ch; }
 .doc h1 { font: 400 clamp(38px, 5.5vw, 56px)/1.08 var(--serif); letter-spacing: -0.02em; margin: 0 0 16px; }
 .doc .date { display: inline-block; background: var(--butter); color: var(--on-pastel); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; margin: 0 0 36px; }
