@@ -80,14 +80,14 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 
 
 /* Home: hero */
-.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(20px, 4vw, 48px) 28px; } /* bottom: same 28px as the gap above the tags */
+.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(20px, 4vw, 48px) 28px; } /* bottom: same 28px visible gap as above the tags */
 @media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr); } }
 .hero h1 {
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
   letter-spacing: -0.02em; margin: 0; text-wrap: balance;
 }
 .hero p { font-size: clamp(17px, 2vw, 20px); color: var(--mu); margin: 22px 0 0; max-width: 36ch; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 28px 0 0; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 23px 0 0; padding: 0; } /* 23px + the 5px under the intro's last line = 28px visible */
 .chips li {
   font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   border-radius: 999px; padding: 7px 14px; color: var(--on-pastel);
