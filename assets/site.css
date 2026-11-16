@@ -80,7 +80,7 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 
 
 /* Home: hero */
-.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(20px, 4vw, 48px) clamp(16px, 2vw, 24px); }
+.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(20px, 4vw, 48px) 28px; } /* bottom: same 28px as the gap above the tags */
 @media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr); } }
 .hero h1 {
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
