@@ -34,7 +34,13 @@ body {
   background: var(--bg);
   color: var(--ink);
   font: 16px/1.6 var(--sans);
+  /* Keep the footer at the bottom of the window when the page is shorter than the window. */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
+main { flex: 1 0 auto; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
 
@@ -74,7 +80,7 @@ header.site .in { display: flex; align-items: center; justify-content: space-bet
 
 
 /* Home: hero */
-.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(40px, 8vw, 96px) clamp(40px, 7vw, 88px); }
+.hero .in { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; padding-block: clamp(20px, 4vw, 48px) clamp(40px, 7vw, 88px); }
 @media (min-width: 820px) { .hero .in { grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr); } }
 .hero h1 {
   font: 400 clamp(42px, 7vw, 80px)/1.05 var(--serif);
